@@ -1,0 +1,52 @@
+integrator          =  md
+tinit               =  0.0
+dt                  =  0.001
+nsteps              =  5000
+nstcomm             =  1
+nstxout             =  1000
+nstvout             =  1000
+nstfout             =  1000
+nstlog              =  100000
+nstenergy           =  100
+nstcalcenergy       =  100
+nstlist             =  5
+;energygrps          =  BMI ANI
+ns_type             =  grid
+comm-mode           =  Linear ;Angular
+pbc                 =  xyz
+periodic-molecules  =  no
+
+; Treatment of Constraints
+constraints          =  none
+
+;Treatment of Vdw and Electrostatics
+cutoff-scheme       =  Verlet
+vdwtype             =  cut-off
+rlist               =  1.10; 2.00;2.48
+rvdw                =  1.10; 2.00;2.48
+coulombtype         =  PME
+rcoulomb            =  1.10; 2.00;2.48
+fourierspacing      =  0.12
+pme_order           =  4
+ewald_rtol          =  1e-05
+;optimize_fft        =  yes
+DispCorr            =  EnerPres
+
+; Temperature coupling is on
+Tcoupl              =  nose-hoover ;V-rescale
+nh-chain-length     =  1
+tau_t               =  0.2 ;0.1
+tc-grps             =  System
+ref_t               =  298.15
+
+; Pressure coupling is  nff
+Pcoupl              =  no
+pcoupltype          =  isotropic
+tau_p               =  8
+compressibility     =  4.5e-5
+ref_p               =  1.0
+
+; Generate velocites is on at 298K
+gen_vel             =  no
+gen_temp            =  298
+gen_seed            =  173529

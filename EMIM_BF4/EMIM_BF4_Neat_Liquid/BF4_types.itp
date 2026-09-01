@@ -1,0 +1,48 @@
+;
+;     [EMIM][BF4] ionic liquid Topology File
+;
+;     BF4- anion AMBER Force Field Topology File
+;
+;     Parameters according to the original paper
+;     de Andrade et. al. (2002) JPC B 106 p. 13344.
+;     Modified according to Muller-Plathe 2007 and adjusted to fit the
+;     experimental thermophysical data of the EMImBF4 ionic liquid at 298.15 K.
+;     B parameters according to the original paper
+;     de Andrade et. al. (2002) JPC B 106 p. 13344.
+;     F parameters taken from OPLS-AA opls_965 perfluoralkanes
+;     sigma=0.29500, epsilon=0.221752 and adjusted to fit the
+;     experimental parameters of the EMImBF4 ionic liquid at 298.15 K.
+;     Using Muller-Plathe F atom parameters.
+;     
+;     Boltzmann weighted RESP charges for [EMIM][BF4] ion pair.
+;
+;     References:
+;
+;     Zhao, W.; Eslami, H.; Cavalcanti, W. L.; Müller-Plathe, F. A Refined All-Atom Model for the Ionic
+;     Liquid 1-n-Butyl 3-Methylimidazolium bis(Trifuoromethylsulfonyl)imide [bmim][Tf2N].
+;     Z. Phys. Chem. 2007, 221, 1647-1662.
+;     https://doi.org/10.1524/zpch.2007.221.11-12.1647
+;
+;     Elvis S. Böes, Caio L. Firme, Jones de Andrade, Hubert Stassen.
+;     Thermophysical properties of [EMIM][BF4] and [EMIM][EtSO4]
+;     mixtures with molecular solvents from a charge-transfer-informed
+;     force field.
+;     Journal of Chemical & Engineering Data 2026 xxxx xxxx.
+;     https://doi.org/xxxx.xxxx
+;
+;     LAST UPDATED 31 AUG 2026.
+;
+
+[ atomtypes ]
+; name  mass (a.m.u.)  charge (e) ptype  sigma (nm)  epsilon (kJ/mol)
+  B     10.8110        0.0000     A      0.35814     0.39748
+  F     18.9984        0.0000     A      0.30577     0.25834 ; de Andrade: 0.31181 and 0.25522 (opls sigma+3.65% eps+16.5%)
+
+[ bondtypes ]
+;  i     j      funct   b0 (nm)     kb (kJ/mol.nm^2)
+   B     F      1       0.1393      242472.0        
+   
+[ angletypes ]
+;  i    j     k     funct  th0 (degree)   kth (kJ/mol.rad^2)
+   F    B     F     1      109.50         418.40 
+                       
