@@ -1,0 +1,49 @@
+;
+; EtSO4- anion AMBER Force Field Topology File
+;
+; Parameters have been taken from GLYCAM06 Force Field:
+;
+;     J. Comput. Chem. 29, p. 622-655, 2008.
+;
+; Modified according to Muller-Plathe 2007 and adjusted to fit the
+; thermophysical experimental parameters of the [EMIm][EtSO4] ionic liquid.
+;
+;     Last update 31 AUG 2026.
+;
+
+[ atomtypes ]
+; name  mass (a.m.u.)  charge (e) ptype  sigma (nm)  epsilon (kJ/mol)
+  CG    12.0111         0.000     A      0.339967    0.457700
+  O2    15.9994         0.000     A      0.342463    0.878640 ; increase sigma +15.7% from original (0.295992)
+  OS    15.9994         0.000     A      0.300001    0.711280
+  S     32.0640         0.000     A      0.356359    1.046000
+
+[ bondtypes ]
+;  i    j    func b0 (nm)   kb (kJ/mol.nm^2)
+   CG   CG   1    0.15200   259408.0 ; Butane (gauche, and trans)
+   CG   HC   1    0.10900   284512.0 ; Parm94
+   CG   H1   1    0.10900   284512.0 ; Parm94
+   CG   OS   1    0.14600   238488.0 ; K calculated from methyl sulphate (eqm value from THEOCHEM 395/396 (1997) 107-122)
+   S    OS   1    0.15890   172380.8 ; K calculated from methyl sulphate (eqm value from THEOCHEM 395/396 (1997) 107-122)
+   S    O2   1    0.14400   518816.0 ; K calculated from methyl sulphate (eqm value from THEOCHEM 395/396 (1997) 107-122)
+   
+[ angletypes ]
+;  i    j    k    func     th0 (degree)     kth (kJ/mol.rad^2)
+   O2   S    O2   1        113.91           1029.260 ; K calculated from methyl sulphate THEOCHEM 395/396 (1997) 107-122)
+   S    OS   CG   1        118.88            418.400 ; K calculated from methyl sulphate THEOCHEM 395/396 (1997) 107-122) 
+   O2   S    OS   1        106.87            870.270 ; K calculated from methyl sulphate THEOCHEM 395/396 (1997) 107-122)
+   HC   CG   HC   1        109.50            334.720 ; Methane, Ethane
+   H1   CG   H1   1        109.50            376.560 ; Methanol, Propanol
+   CG   CG   HC   1        112.60            376.560 ; Ethane
+   CG   CG   H1   1        111.00            376.560 ; Propanol
+   OS   CG   CG   1        108.50            585.760 ; Methoxyethane (Ethylmethyl ether)
+   H1   CG   OS   1        110.00            502.080 ; Methoxymethane (Dimethyl ether)   
+
+[ dihedraltypes ]
+; i    j    k    l    func  gamma   V_n/2      n    Source: GLYCAM06
+  CG   OS   S    O2   9     0.0     0.75312    3  ; CG-OS-S-O2  1   0.18   0.0    3.  Methyl sulphate -CH3OSO3
+  H1   CG   OS   S    9     0.0     0.71128    3  ; H1-CG-OS-S  1   0.17   0.0    3.  Methyl sulphate -CH3CH2OSO3
+  CG   CG   OS   S    9     0.0    -5.02080    1  ; CG-CG-OS-S  1  -1.20   0.0    1.  Ethyl sulphate  -CH3OSO3
+  H1   CG   CG   HC   9     0.0     0.71128    3  ; H1-CG-CG-HC 1   0.17   0.0    3.  Ethanol, after H1-CG-CG-CG
+  HC   CG   CG   OS   9     0.0     0.20920    3  ; HC-CG-CG-OS 1   0.05   0.0    3.  Methoxyethane
+    

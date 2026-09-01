@@ -1,0 +1,121 @@
+;
+;     [EMIM][EtSO4] ionic liquid Topology File
+;
+;     EMIM+ cation AMBER Force Field Topology File
+;
+;     Parameters according to the original paper 
+;     de Andrade et. al. (2002) JPC B 106 p. 13344.
+;     Modified according to Muller-Plathe 2007 and adjusted to fit the 
+;     experimental parameters of the EMImBF4 ionic liquid at 298.15 K.
+;     
+;     Boltzmann weighted RESP charges for [EMIM][EtSO4] ion pair.
+;
+;     References:
+;
+;     Zhao, W.; Eslami, H.; Cavalcanti, W. L.; Müller-Plathe, F. A Refined All-Atom Model for the Ionic
+;     Liquid 1-n-Butyl 3-Methylimidazolium bis(Trifuoromethylsulfonyl)imide [bmim][Tf2N].
+;     Z. Phys. Chem. 2007, 221, 1647-1662.
+;     https://doi.org/10.1524/zpch.2007.221.11-12.1647
+;
+;     Elvis S. Böes, Caio L. Firme, Jones de Andrade, Hubert Stassen.
+;     Thermophysical properties of [EMIM][BF4] and [EMIM][EtSO4]
+;     mixtures with molecular solvents from a charge-transfer-informed
+;     force field.
+;     Journal of Chemical & Engineering Data 2026 xxxx xxxx.
+;     https://doi.org/xxxx.xxxx
+;
+;     LAST UPDATED 31 AUG 2026.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+  EtSO4-          3
+
+[ atoms ]
+;   nr   type  resnr residue  atom   cgnr   charge    mass     
+     1   O2    1     ESO      O1    1      -0.540627  15.9994
+     2   O2    1     ESO      O1    1      -0.540627  15.9994   
+     3   O2    1     ESO      O1    1      -0.540627  15.9994  
+     4   S     1     ESO      S     1       1.056046  32.06
+     5   OS    1     ESO      O2    2      -0.448220  15.9994   
+     6   CG    1     ESO      C1a   3       0.440090  12.011      
+     7   H1    1     ESO      H1a   3      -0.040804   1.008
+     8   H1    1     ESO      H1a   3      -0.040804   1.008
+     9   CG    1     ESO      C2a   4      -0.345624  12.011      
+    10   HC    1     ESO      H2a   4       0.082833   1.008
+    11   HC    1     ESO      H2a   4       0.082833   1.008
+    12   HC    1     ESO      H2a   4       0.082833   1.008
+
+[ bonds ]
+;   i    j    funct           
+    1    4    1
+    2    4    1
+    3    4    1
+    4    5    1
+    5    6    1
+    6    7    1
+    6    8    1
+    6    9    1
+    9   10    1
+    9   11    1 
+    9   12    1
+
+[ pairs ]
+;   i    j    funct
+    1    6    1
+    2    6    1
+    3    6    1
+    4    7    1
+    4    8    1
+    4    9    1    
+    5   10    1
+    5   11    1
+    5   12    1
+    7   10    1
+    7   11    1
+    7   12    1
+    8   10    1
+    8   11    1
+    8   12    1
+                       
+[ angles ]
+;   i    j    k    funct        
+    1    4    2    1
+    1	 4    3    1
+    1	 4    5    1
+    2	 4    3    1
+    2	 4    5    1
+    3	 4    5    1
+    4	 5    6    1
+    5	 6    7    1
+    5	 6    8    1
+    5	 6    9    1
+    7	 6    8    1
+    7	 6    9    1
+    8	 6    9    1
+    6	 9   10    1
+    6	 9   11    1
+    6	 9   12    1
+   10	 9   11    1
+   10	 9   12    1
+   11	 9   12    1
+
+[ dihedrals ]
+;   i    j    k    l    funct  
+    1    4    5    6    9
+    2    4    5    6    9
+    3    4    5    6    9
+    4    5    6    7    9
+    4    5    6    8    9
+    4    5    6    9    9  
+    5    6    9   10    9
+    5    6    9   11    9
+    5    6    9   12    9
+    7    6    9   10    9
+    7    6    9   11    9
+    7    6    9   12    9
+    8    6    9   10    9
+    8    6    9   11    9
+    8    6    9   12    9
+     
+                                 
