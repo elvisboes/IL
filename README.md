@@ -40,8 +40,11 @@ from the quantum chemical calculation itself.
 │   │   ├── topol.top            # same topology, default GROMACS name
 │   │   ├── conf.gro             # same configuration, default GROMACS name
 │   │   └── grompp.mdp           # run parameters (production)
-│   └── EMIM_BF4_Mixtures/       # binary mixtures with acetonitrile and
-│                                # ethanol (files to be added)
+│   └── EMIM_BF4_Mixtures/
+│       ├── EMIM_BF4_Acetonitrile/
+│       │   └── EMIM_BF4_Acetonitrile.zip
+│       └── EMIM_BF4_Ethanol/
+│           └── EMIM_BF4_Ethanol.zip
 └── EMIM_EtSO4/
     ├── EMIM_EtSO4_Neat_Liquid/
     │   ├── EMIM.itp
@@ -55,19 +58,43 @@ from the quantum chemical calculation itself.
     │   ├── conf.gro
     │   └── grompp.mdp
     └── EMIM_EtSO4_Mixtures/
+        ├── EMIM_EtSO4_Acetonitrile/
+        │   └── EMIM_EtSO4_Acetonitrile.zip
+        └── EMIM_EtSO4_Ethanol/
+            └── EMIM_EtSO4_Ethanol.zip
 ```
 
 Each ionic liquid directory is split into a `*_Neat_Liquid` folder, containing
 everything needed to reproduce the pure-liquid simulations, and a `*_Mixtures`
-folder for the corresponding binary systems with molecular solvents. Within the
+folder holding the binary systems with acetonitrile and ethanol. Within the
 neat-liquid folders, `topol.top` and `conf.gro` are copies of the named topology
-and configuration files under the default GROMACS names, so that `gmx grompp` can
-be called without arguments.
+and configuration files under the default GROMACS names, so that `gmx grompp`
+can be called without arguments.
 
-> **Note.** The mixture topologies and configurations are being added over the
-> coming days. They introduce no new parameters: the ionic liquid parameters are
-> exactly those in the `*_Neat_Liquid` folders, combined with standard published
-> models for the molecular solvents.
+## Mixtures
+
+The mixture systems are distributed as one archive per ionic liquid + solvent
+pair. Each archive expands into one directory per composition, named
+`<IL>_<n_IL>_<solvent>_<n_solvent>`, where the two integers are the numbers of
+ion pairs and of solvent molecules in the simulation box; every box contains
+1000 molecules in total, so that `EMIM_BF4_170_Acetonitrile_830` is a box of
+170 ion pairs and 830 acetonitrile molecules. Inside each composition
+directory, a `T_<temperature>` subdirectory holds the topology, parameter,
+include-topology, configuration and run-parameter files for that state point,
+in the same arrangement used for the pure liquids.
+
+| Archive | Compositions | Temperature |
+|---|---|---|
+| `EMIM_BF4_Acetonitrile.zip` | 9 | 303 K |
+| `EMIM_BF4_Ethanol.zip` | 5 | 298 K |
+| `EMIM_EtSO4_Acetonitrile.zip` | 12 | 303 K |
+| `EMIM_EtSO4_Ethanol.zip` | 10 | 303 K |
+
+The pure-solvent boxes are included among the compositions, since they are
+required to evaluate the excess molar volumes reported in the article. The
+mixture files introduce no new ionic liquid parameters: they use exactly the
+parameters of the `*_Neat_Liquid` folders, combined with published models for
+acetonitrile and ethanol.
 
 ## Simulation details
 
