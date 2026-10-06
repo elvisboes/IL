@@ -7,7 +7,7 @@ accompanying the article:
 > *Thermophysical properties of [EMIM][BF4] and [EMIM][EtSO4] mixtures with
 > molecular solvents from a charge-transfer-informed force field*,
 > **Journal of Chemical & Engineering Data** (2026).
-> DOI: `10.1021/acs.jced.XXXXXXX`
+> DOI: `https://doi.org/10.1021/acs.jced.6c00404`
 >
 [![DOI](https://zenodo.org/badge/1353741612.svg)](https://doi.org/10.5281/zenodo.22541094)
 
